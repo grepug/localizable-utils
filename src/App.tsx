@@ -77,6 +77,7 @@ function App() {
             const a = document.createElement("a");
             const filteredObject = {
               ...object,
+              version: "1",
               strings: Object.keys(object?.strings || {}).reduce((acc, key) => {
                 if (!deletedKeys.includes(key)) {
                   acc[key] = object.strings[key];
@@ -97,10 +98,6 @@ function App() {
       </div>
       <div>
         <p>keys: {object && Object.keys(object.strings).length}</p>
-        <p>
-          duplicated keys count:{" "}
-          {duplicatedKeys.length ? duplicatedKeys.length : "0"}
-        </p>
       </div>
       <div
         style={{
